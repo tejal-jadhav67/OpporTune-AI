@@ -61,19 +61,16 @@ It then calculates a transparent match score and identifies relevant skill gaps.
 - Docker
 - Google Cloud Run
 
-## Current Development Status
-Phase 1 - Project setup and application skeleton.
-
-Upcoming phases will implement:
-
-1. Database and seed data
-2. Backend APIs
-3. Recommendation engine
-4. Frontend functionality
-5. AI integration
-6. Testing
-7. Cloud Run deployment
-8. Final polish
+## Development Phases
+1. Project setup and application skeleton.
+2. Database and seed data
+3. Backend APIs
+4. Recommendation engine
+5. Frontend functionality
+6. AI integration
+7. Testing
+8. Netlify/Vercel Deployment
+9. Final polish
 
 ## Running Locally
 
