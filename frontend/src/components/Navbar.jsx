@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { Sparkles } from "lucide-react";
+import { Bookmark, Compass, LayoutDashboard, Sparkles, UserRound } from "lucide-react";
 
 function Navbar() {
   const getNavClass = ({ isActive }) =>
@@ -25,18 +25,12 @@ function Navbar() {
           </div>
         </Link>
 
-        <nav className="flex items-center gap-4 sm:gap-6">
-          <NavLink to="/dashboard" className={getNavClass}>
-            Dashboard
-          </NavLink>
+        <nav className="hidden items-center gap-4 sm:flex sm:gap-6">
+          <NavLink to="/dashboard" className={getNavClass}>Dashboard</NavLink>
 
-          <NavLink to="/opportunities" className={getNavClass}>
-            Opportunities
-          </NavLink>
+          <NavLink to="/opportunities" className={getNavClass}>Opportunities</NavLink>
 
-          <NavLink to="/saved" className={getNavClass}>
-            Saved
-          </NavLink>
+          <NavLink to="/saved" className={getNavClass}>Saved</NavLink>
 
           <Link
             to="/profile"
@@ -45,9 +39,20 @@ function Navbar() {
             Profile
           </Link>
         </nav>
+
+        <nav className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 rounded-2xl border border-slate-200 bg-white/95 p-1 shadow-xl backdrop-blur sm:hidden">
+          <MobileLink to="/dashboard" icon={LayoutDashboard} label="Dashboard" />
+          <MobileLink to="/opportunities" icon={Compass} label="Explore" />
+          <MobileLink to="/saved" icon={Bookmark} label="Saved" />
+          <MobileLink to="/profile" icon={UserRound} label="Profile" />
+        </nav>
       </div>
     </header>
   );
+}
+
+function MobileLink({ to, icon: Icon, label }) {
+  return <NavLink to={to} aria-label={label} title={label} className={({ isActive }) => `flex h-11 w-11 items-center justify-center rounded-xl ${isActive ? "bg-slate-950 text-white" : "text-slate-500"}`}><Icon size={18} /></NavLink>;
 }
 
 export default Navbar;
