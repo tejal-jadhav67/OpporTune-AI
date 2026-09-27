@@ -154,4 +154,4 @@ The MVP can later be extended with:
 - Admin tools
 
 ## Contributors
-Add team member names here before final submission.
+Tejal Jadhav
